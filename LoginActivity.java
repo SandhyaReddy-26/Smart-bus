@@ -1,4 +1,4 @@
-package com.vn8031.smartbus;
+package com.vn8031.trackerapp;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(LoginActivity.this, HomePage.class)
+                    startActivity(new Intent(LoginActivity.this, TrackerActivity.class)
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
                 }
@@ -67,13 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                 loginDialog.dismiss();
             }
         });
-
-    }
-
-    public void register(View view)
-    {
-        Intent i = new Intent(this,RegisterActivity.class);
-        startActivity(i);
 
     }
 
